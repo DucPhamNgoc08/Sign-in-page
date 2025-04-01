@@ -1,0 +1,432 @@
+:root {
+    --primary-bg: #1b1b25;
+    --card-bg: #222232;
+    --form-bg: #2a2a3a;
+    --primary-text: #ffffff;
+    --secondary-text: #a0a0b0;
+    --accent-color: #7b86ee;
+    --accent-hover: #6a5acd;
+    --input-bg: #2f2f3f;
+    --input-border: #3a3a4a;
+    --divider-color: #a3a3a4;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --error-color: #ff5252;
+    --success-color: #4caf50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.5;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 25% 10%, rgba(123, 104, 238, 0.1) 0%, transparent 20%), 
+        radial-gradient(circle at 75% 75%, rgba(123, 104, 238, 0.1) 0%, transparent 20%);
+    z-index: -1; 
+}
+
+.container{
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+.login-card{
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.image-section{
+    width: 45%;
+    background: linear-gradient(to bottom, #554cae, #7b68ee);
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://images.unsplash.com/photo-1509718443690-d8e2fb3474b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+}
+
+.image-section::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(85, 76, 174, 0.7), rgba(123, 104, 238, 0.7));
+    z-index: 0;
+}
+
+.logo, .back-link, .tag-line{
+    position: relative;
+    z-index: 1;
+}
+
+.logo{
+    margin-bottom: 20px;
+}
+
+.logo-text{
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+.back-link{
+    margin-bottom: auto;
+}
+
+.back-link a{
+    color: var(--primary-text);
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.back-link a:hover{
+    opacity: 1;
+}
+
+.arrow{
+    margin-left: 5px;
+}
+
+.tag-line{
+    margin-top: auto;
+}
+
+.tag-line h2{
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.form-section{
+    width: 55%;
+    padding: 50px;
+    background-color: var(--card-bg);
+}
+
+h1{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-text);
+}
+
+.login-link{
+    color: var(--secondary-text);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.login-link a{
+    color: var(--primary-text);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover{
+    text-decoration: underline;
+}
+
+
+.form-row{
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--primary-text);
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group-password-group{
+    position: relative;
+}
+
+.toggle-password{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--secondary-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password:hover{
+    color: var(--primary-text);
+}
+
+.form-group-checkbox-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-group-checkbox-group input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.form-group-checkbox-group label{
+    font-size: 14px;
+    color: var(--secondary-text);
+    cursor: pointer;
+}
+
+.form-group-checkbox-group label a{
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+.form-group-checkbox-group label a:hover{
+    text-decoration: underline;
+}
+
+.create-account-button{
+    width: 100%;
+    padding: 14px;
+    background-color: var(--accent-color);
+    color: var(--primary-text);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.create-account-button:hover{
+    background-color: var(--accent-hover);
+}
+
+.divider{
+    margin: 25px 0;
+    position: relative;
+    text-align: center;
+}
+
+.divider::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--divider-color);
+}
+
+.divider span{
+    position: relative;
+    background-color: var(--card-bg);
+    padding: 0 15px;
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.social-logins{
+    display: flex;
+    gap: 15px;  
+}
+
+.social-button{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--primary-text);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.social-button:hover{
+    background-color: rgba(123, 104, 238, 0.1); 
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+        padding: 15px;
+    }
+    
+    .form-section {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        max-width: 600px;
+        padding: 15px;
+    }
+    
+    .login-card {
+        flex-direction: column;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .image-section,
+    .form-section {
+        width: 100%;   
+    }
+
+    .image-section {
+        padding: 40px;
+        min-height: 300px;
+    }
+    
+    .form-section {
+        padding: 35px;
+    }
+    
+    .tag-line h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .image-section {
+        padding: 30px;
+        min-height: 230px;
+    }
+
+    .form-section {
+        padding: 25px;
+    }
+
+    .tag-line h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+    
+    .login-link {
+        margin-bottom: 20px;
+    }
+
+    .social-logins {
+        flex-direction: column;
+    }
+    
+    .social-button {
+        padding: 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 5px;
+    }
+    
+    .image-section {
+        padding: 20px;
+        min-height: 180px;
+    }
+
+    .form-section {
+        padding: 20px 15px;
+    }
+    
+    .logo-text {
+        font-size: 24px;
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    
+    .form-group-checkbox-group {
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    
+    .create-account-button {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
