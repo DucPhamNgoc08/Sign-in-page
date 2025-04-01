@@ -29,7 +29,8 @@ This repository contains a login page built with HTML and CSS. The project featu
 ```
 
 ## Screenshots
-![image](https://github.com/user-attachments/assets/0f0ae331-9722-4a05-9930-7bd9a1ae5b61)
+![image](https://github.com/user-attachments/assets/9288d369-038f-461b-be9d-e260094a0163)
+
 
 
 ## License
